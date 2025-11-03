@@ -1,14 +1,67 @@
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Browser JavaScript</title>
+    <title>Personal Counter App</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        transition: background-color 0.5s ease;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+      :root {
+        background-color: #e5e7eb;
+      }
+    </style>
   </head>
   <body>
-    <h1 id="greeting">Hello, Console JavaScript!</h1>
-    <button id="change-greeting">Update Greeting</button>
-    <p id="click-count">Button clicks: 0</p>
+    <header class="mb-8 p-4 text-center">
+      <h1 class="text-4xl font-extrabold text-gray-800">
+        Joshua Rodgers Counter
+      </h1>
+    </header>
 
-    <script type="module" src="./main.js"></script>
+    <main class="w-full max-w-sm bg-white shadow-2xl rounded-xl p-8 space-y-8">
+      <section class="text-center">
+        <h2 class="text-xl font-semibold text-gray-600 mb-4">Current Count:</h2>
+        <p
+          id="count-display"
+          class="text-7xl font-mono font-bold text-gray-900"
+        >
+          0
+        </p>
+      </section>
+
+      <section class="flex flex-col space-y-4">
+        <button
+          id="increment-btn"
+          class="py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-150 transform hover:scale-[1.01]"
+        >
+          Increment (+1)
+        </button>
+        <div class="flex space-x-4">
+          <button
+            id="decrement-btn"
+            class="flex-1 py-3 bg-yellow-500 text-white font-semibold rounded-lg shadow-md hover:bg-yellow-600 transition duration-150"
+          >
+            Decrement (-1)
+          </button>
+          <button
+            id="reset-btn"
+            class="flex-1 py-3 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 transition duration-150"
+          >
+            Reset
+          </button>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
